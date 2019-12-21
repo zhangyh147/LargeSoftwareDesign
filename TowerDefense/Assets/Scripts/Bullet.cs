@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour {
 
-	public float damage = 50;
-	public float speed = 20;
+	public float damage;
+	public float speed;
 	public GameObject explosionEffectPrefab;
 	private Transform target;
 

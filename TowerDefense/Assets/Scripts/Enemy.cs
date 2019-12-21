@@ -7,7 +7,8 @@ public class Enemy : MonoBehaviour {
 
 	public float speed = 10;//行动速度
 	public float hp = 150;//当前生命值
-	private float totalHp;//总生命值
+	private float totalHp;//初始生命值
+	public float money;//消灭该敌人增加的金币
 	public Slider hpSlider;
 	public GameObject explosionEffect;
 
@@ -38,8 +39,10 @@ public class Enemy : MonoBehaviour {
 			ReachEnd();
 	}
 
+	//敌人到达终点
 	void ReachEnd()
 	{
+		GameManagers.Instance.Fail();
 		GameObject.Destroy(this.gameObject);
 	}
 	void OnDestroy()
@@ -59,6 +62,8 @@ public class Enemy : MonoBehaviour {
 
 	void Die()
 	{
+		TurretManager.moneyFromEnemy = money;
+		TurretManager.enemyDie = true;
 		Destroy(this.gameObject);
 		GameObject effect = GameObject.Instantiate(explosionEffect, transform.position, transform.rotation);
 		Destroy(effect, 1.5f);

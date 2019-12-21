@@ -258,6 +258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   hp: 150
+  money: 80
   hpSlider: {fileID: 114302455831892284}
   explosionEffect: {fileID: 1397496687612238, guid: ea4f9f83f157c5c4e942775522ef205f,
     type: 2}

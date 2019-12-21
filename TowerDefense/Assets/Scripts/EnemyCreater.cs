@@ -8,9 +8,17 @@ public class EnemyCreater : MonoBehaviour {
 	public Wave[] waves;
 	public Transform START;
 	public float waveRate;
+	private Coroutine coroutine;
+
 	// Use this for initialization
 	void Start () {
-		StartCoroutine(CreateEnemy());
+		coroutine = StartCoroutine(CreateEnemy());
+	}
+
+	//游戏停止
+	public void Stop()
+	{
+		StopCoroutine(coroutine);
 	}
 	
 	IEnumerator CreateEnemy()
@@ -30,5 +38,10 @@ public class EnemyCreater : MonoBehaviour {
 			}
 			yield return new WaitForSeconds(waveRate);
 		}
+		while(countEnemyAlive>0)
+		{
+			yield return 0;
+		}
+		GameManagers.Instance.Win();
 	}
 }

@@ -54,6 +54,8 @@
      <Compile Include="Assets\Scripts\Bullet.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\EnemyCreater.cs" />
+     <Compile Include="Assets\Scripts\GameManagers.cs" />
+     <Compile Include="Assets\Scripts\GameMenu.cs" />
      <Compile Include="Assets\Scripts\MapCube.cs" />
      <Compile Include="Assets\Scripts\Turret.cs" />
      <Compile Include="Assets\Scripts\TurretData.cs" />
